@@ -13,6 +13,14 @@ function App() {
     return fibonacci(n - 1) + fibonacci(n - 2);
   }
 
+  const handleAdd = () => {
+    if(index < 10) {
+      const newSequence = [...sequence, fibonacci(index)];
+      setSequence(newSequence);
+      setIndex(index + 1);
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
