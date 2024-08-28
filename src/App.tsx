@@ -15,8 +15,12 @@ function App() {
 
   const handleAdd = () => {
     if(index < 10) {
-      const newSequence = [...sequence, fibonacci(index)];
-      setSequence(newSequence);
+      const nextFibonacciVal = fibonacci(index);
+      if(nextFibonacciVal !== 0) {
+        const newSequence = [...sequence, fibonacci(index)];
+        setSequence(newSequence);
+        
+      }
       setIndex(index + 1);
     }
   };
@@ -45,14 +49,20 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Fibonacci Sequence</p>
       </header>
+      <div className='counter-controls'>
+        <Controls onAdd={handleAdd} onRemove={handleRemove} onRestart={handleReset} />
+      </div>
       <div className='container'>
+     
         {sequence.map((num, index) => (
           <div className='line' key={index}>
             <div>{num}</div>
-            <Polygon type={getPolygonType(index)} />
+            {[...Array(num)].map((_, polyIdx) => (
+            <Polygon key={polyIdx} type={getPolygonType(index +1)} />
+          ))}
           </div>
           ))}
-        <Controls onAdd={handleAdd} onRemove={handleRemove} onRestart={handleReset} />
+       
       </div>
     </div>
   );
