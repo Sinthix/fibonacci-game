@@ -21,11 +21,36 @@ function App() {
     }
   };
 
+  const handleRemove = () => {
+    if(index > 0) {
+      setSequence(sequence.slice(0, -1));
+      setIndex(index - 1);
+    }
+  };
+
+  const handleReset = () => {
+      setSequence([]);
+      setIndex(0);
+  };
+
+  const getPolygonType = (n: number): 'circle' | 'square' | 'triangle' => {
+    if(n % 3 === 0) return 'circle';
+    if(n % 3 === 1) return 'square';
+    return 'triangle'
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <p>Fibonacci Sequence</p>
       </header>
+      <div className='container'>
+      {sequence.map((num, index) =>
+        <div>{num}</div>
+        )
+      };
+      </div>
     </div>
   );
 }
