@@ -50,6 +50,7 @@ function App() {
         <p>Fibonacci Sequence</p>
       </header>
       <div className='counter-controls'>
+        <span>Current Index <b>{index}</b></span>
         <Controls onAdd={handleAdd} onRemove={handleRemove} onRestart={handleReset} />
       </div>
       <div className='container'>
@@ -57,9 +58,11 @@ function App() {
         {sequence.map((num, index) => (
           <div className='line' key={index}>
             <div>{num}</div>
-            {[...Array(num)].map((_, polyIdx) => (
-            <Polygon key={polyIdx} type={getPolygonType(index +1)} />
-          ))}
+            <div className='polys'>
+              {[...Array(num)].map((_, polyIdx) => (
+                <Polygon key={polyIdx} type={getPolygonType(index +1)} />
+              ))}
+            </div>
           </div>
           ))}
        

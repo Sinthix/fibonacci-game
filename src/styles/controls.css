@@ -1,0 +1,48 @@
+.add-btn {
+    width: 122.21px;
+    height: 41.53px;
+    top: 108px;
+    left: 1026px;
+    gap: 0px;
+    opacity: 0px;
+    padding: 11px 17px 11px 17px;
+    gap: 10px;
+    opacity: 0px;
+    background-color: #1B3646;
+    border-radius: 15px;
+    color: #fff;
+    font-family: 'Montserrat';
+    cursor: pointer;
+}
+
+.remove-btn {
+    width: 122.21px;
+    height: 41.53px;
+    top: 108px;
+    left: 1026px;
+    gap: 0px;
+    opacity: 0px;
+    padding: 11px 17px 11px 17px;
+    gap: 10px;
+    opacity: 0px;
+    background-color: #1B3646;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.restart-btn {
+    width: 122.21px;
+    height: 41.53px;
+    top: 108px;
+    left: 1026px;
+    gap: 0px;
+    opacity: 0px;
+    padding: 11px 17px 11px 17px;
+    gap: 10px;
+    opacity: 0px;
+    background-color: #1B3646;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+}
