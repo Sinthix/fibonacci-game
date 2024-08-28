@@ -46,10 +46,13 @@ function App() {
         <p>Fibonacci Sequence</p>
       </header>
       <div className='container'>
-      {sequence.map((num, index) =>
-        <div>{num}</div>
-        )
-      };
+        {sequence.map((num, index) => (
+          <div className='line' key={index}>
+            <div>{num}</div>
+            <Polygon type={getPolygonType(index)} />
+          </div>
+          ))};
+        <Controls onAdd={handleAdd} onRemove={handleRemove} onRestart={handleReset} />
       </div>
     </div>
   );

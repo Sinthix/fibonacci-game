@@ -5,8 +5,8 @@ const Controls: React.FC<IControlsTypes> = ({ onAdd, onRemove, onRestart}) => {
     return (
         <div className="controls">
             <button onClick={onAdd}>Add</button>
-            <button onClick={onRemove}>Add</button>
-            <button onClick={onRestart}>Add</button>
+            <button onClick={onRemove}>Remove</button>
+            <button onClick={onRestart}>Restart</button>
         </div>
     );
 };
