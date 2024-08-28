@@ -64,7 +64,7 @@ function App() {
       
       <div className='container'>
       <div className='counter-controls'>
-        <span className=''>Current Index <b>{index}</b></span>
+        <span>Current Index <b>{index}</b></span>
         <Controls onAdd={handleAdd} onRemove={handleRemove} onRestart={handleReset} />
       </div>
         {sequence.map((num, index) => (

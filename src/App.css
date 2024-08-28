@@ -19,9 +19,7 @@
   background-color: #1B3646;
   max-height: 80px;
   min-height: 80px;
-  width: 100%;
   display: flex;
-  padding-left: 24px;
   gap: 2px;
   font-family: 'Montserrat';
   font-size: 32px;
@@ -32,8 +30,10 @@
 }
 
 .counter-controls {
-  display: flex;
-  gap: 60%;
+  padding: 15px;
+  display: grid;
+  font-family: 'Montserrat';
+  grid-template-columns: 1fr auto;
   align-items: center;
 }
 
@@ -68,4 +68,13 @@
   font-family: 'Montserrat';
   display: block;
   margin-left: 70%;
+}
+
+@media only screen and (max-width: 600px) {
+  .counter-controls {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+    
+  }
 }
