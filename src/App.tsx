@@ -23,9 +23,8 @@ function App() {
         setSequence(newSequence);
         
       }
-    if(index === 9) {
+    if(index >= 9) {
       toggleModal();
-      handleReset();
     }
       setIndex(index + 1);
     }
@@ -62,12 +61,12 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Fibonacci Sequence</p>
       </header>
+      
+      <div className='container'>
       <div className='counter-controls'>
-        <span>Current Index <b>{index}</b></span>
+        <span className=''>Current Index <b>{index}</b></span>
         <Controls onAdd={handleAdd} onRemove={handleRemove} onRestart={handleReset} />
       </div>
-      <div className='container'>
-     
         {sequence.map((num, index) => (
           <div className='line' key={index}>
             <div>{num}</div>
