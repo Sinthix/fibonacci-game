@@ -51,7 +51,7 @@ function App() {
             <div>{num}</div>
             <Polygon type={getPolygonType(index)} />
           </div>
-          ))};
+          ))}
         <Controls onAdd={handleAdd} onRemove={handleRemove} onRestart={handleReset} />
       </div>
     </div>
