@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
+import { IModal } from "../interfaces/IModal";
 import '../styles/modal.css';
 
-const Modal = ({ show, onClose, children }) => {
+
+const Modal: React.FC<IModal> = ({ show, onClose, children }) => {
     useEffect(() => {
-        const handleEsc = (event) => {
+        const handleEsc = (event: KeyboardEvent) => {
             if(event.key === 'Escape') {
                 onClose();
             }

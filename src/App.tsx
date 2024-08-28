@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import Polygon from './components/Polygon';
 import Controls from './components/Control';
 import logo from './logo.svg';
+import Modal from './components/Modal';
 import './App.css';
 
 function App() {
   const [index, setIndex] = useState<number>(0);
   const [sequence, setSequence] = useState<number[]>([]);
+  const [showModal, setShowModal] = useState(false);
 
   const fibonacci = (n: number): number => {
     if(n <= 1) return n;
@@ -21,6 +23,10 @@ function App() {
         setSequence(newSequence);
         
       }
+    if(index === 9) {
+      toggleModal();
+      handleReset();
+    }
       setIndex(index + 1);
     }
   };
@@ -41,6 +47,13 @@ function App() {
     if(n % 3 === 0) return 'circle';
     if(n % 3 === 1) return 'square';
     return 'triangle'
+  };
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+    if(showModal){
+      handleReset();
+    }
   };
 
   return (
@@ -67,6 +80,11 @@ function App() {
           ))}
        
       </div>
+      <Modal show={showModal} onClose={toggleModal}>
+        <h2>Current index is {index}</h2>
+        <p>The game will restart</p>
+        <button className='close-modal' onClick={toggleModal}>Ok</button>
+      </Modal>
     </div>
   );
 }

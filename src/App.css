@@ -44,3 +44,21 @@
   justify-content: center;
   font-size: 40px;
 }
+
+.close-modal {
+  width: 122.21px;
+  height: 41.53px;
+  top: 108px;
+  gap: 0px;
+  opacity: 0px;
+  padding: 11px 17px 11px 17px;
+  gap: 10px;
+  opacity: 0px;
+  background-color: #1B3646;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Montserrat';
+  display: block;
+  margin-left: 70%;
+}
